@@ -11,6 +11,7 @@ public static class ProjectSetup
         Asset.ImportAsset("Ultimate Editor Enhancer.unitypackage", "Infinity Code/Editor ExtensionsUtilities");
         Asset.ImportAsset("PrimeTween High-Performance Animations and Sequences.unitypackage", "Kyrylo Kuzyk/Editor ExtensionsAnimation");
         Asset.ImportAsset("Odin Inspector and Serializer.unitypackage", "Sirenix/Editor ExtensionsSystem");
+        Asset.ImportAsset("Selection History.unitypackage", "Staggart Creations/Editor ExtensionsUtilities");
     }
 
     public static class Asset
