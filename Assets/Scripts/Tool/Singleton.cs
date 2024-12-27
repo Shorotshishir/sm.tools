@@ -27,17 +27,13 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
             lock (_lock)
             {
-                if (_instance == null)
-                {
-                    _instance = (T)FindAnyObjectByType(typeof(T));
+                if (_instance != null) return _instance;
+                _instance = (T)FindAnyObjectByType(typeof(T));
 
-                    if (_instance == null)
-                    {
-                        var singletonObject = new GameObject($"{typeof(T)}");
-                        _instance = singletonObject.AddComponent<T>();
-                        DontDestroyOnLoad(singletonObject);
-                    }
-                }
+                if (_instance != null) return _instance;
+                var singletonObject = new GameObject($"{typeof(T)}");
+                _instance = singletonObject.AddComponent<T>();
+                DontDestroyOnLoad(singletonObject);
 
                 return _instance;
             }
